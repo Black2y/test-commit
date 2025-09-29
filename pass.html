@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            width: fit-content;
+        }
+        input{
+            margin:1em 0em;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
     <form action="">
-        <input id="pass">
-        <input type="text" name="-" id="b6">
+        <label for="pass_id">Введите идентификатор</label>
+        <input type="text" id="pass_id">
         <label for="pass">Сгенерированный пароль</label>
+        <input id="pass">
+        <label for="b6">Проверка id</label>
+        <input type="text" name="-" id="b6">
         <button type="button" id="gen__pass" onclick="fillForm()">Сгенерировать пароль</button>
     </form>
     <script>
             function fillForm(){
+
+            var pass_id = document.getElementById("pass_id").value;
+            var N = pass_id.length;
             
-            var N = 7; 
+            
+             
 
             var alphabet1 = "абвгдеёжзийклмнопрстуфхцчшщъьэюя";
             var alphabet2 = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЭЮЯ";
@@ -35,7 +58,7 @@
 
             var password = b1 + b2 + b3 + b4 + b5 + b6 + b7; 
                 document.getElementById("pass").value = password;
-                document.getElementById("b6").value = b6;
+                document.getElementById("b6").value = N;
             }
     </script>
 </body>
