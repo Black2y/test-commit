@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input id="pass">
+        <input type="text" name="-" id="b6">
+        <label for="pass">Сгенерированный пароль</label>
+        <button type="button" id="gen__pass" onclick="fillForm()">Сгенерировать пароль</button>
+    </form>
+    <script>
+            function fillForm(){
+            
+            var N = 7; 
+
+            var alphabet1 = "абвгдеёжзийклмнопрстуфхцчшщъьэюя";
+            var alphabet2 = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЭЮЯ";
+            var b1 = alphabet1[Math.random() * alphabet1.length | 0];
+            var b2 = alphabet1[Math.random() * alphabet1.length | 0];
+            var b3 = alphabet1[Math.random() * alphabet1.length | 0];
+
+            var b4 = alphabet2[Math.random() * alphabet2.length | 0];
+            var b5 = alphabet2[Math.random() * alphabet2.length | 0];
+
+            var b6 = (N**4) % 100;
+
+            if(b6 < 10 && b6 > -10)
+            {var b7 = 0;} 
+            else 
+            {b7 = b6;}
+
+            var password = b1 + b2 + b3 + b4 + b5 + b6 + b7; 
+                document.getElementById("pass").value = password;
+                document.getElementById("b6").value = b6;
+            }
+    </script>
+</body>
+</html>
